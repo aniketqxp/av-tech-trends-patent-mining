@@ -1,0 +1,13 @@
+numpy
+pandas
+scipy
+scikit-learn
+matplotlib
+seaborn
+nltk
+spacy
+sentence-transformers
+tensorflow
+requests
+notebook
+jupyterlab
