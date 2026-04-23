@@ -1,91 +1,80 @@
 # AV Technology Patent Mining
 
-A data-driven analysis of autonomous vehicle patents. This repository contains curated patent data, reusable pipeline code, and analytical notebooks for semantic clustering, trend extraction, emergence detection, and outlier analysis.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
-## Overview
+A sophisticated data-driven pipeline for mining, analyzing, and visualizing trends in Autonomous Vehicle (AV) patents. This project transforms raw patent data into actionable innovation intelligence through semantic clustering, temporal forecasting, and LLM-powered structured extraction.
 
-The project converts raw patent text into actionable innovation intelligence by combining:
-- curated patent data ingestion and normalization
-- semantic embedding-based clustering
-- temporal trend analysis of patent terminology
-- emergence scoring for promising technology areas
-- outlier detection for unusual or novel patents
+## 🚀 The Hook: Why This Project?
 
-## Repository structure
+The autonomous vehicle industry is a dense thicket of complex intellectual property. Identifying emerging technologies, dominant applicants, and novel outliers requires more than simple keyword searches. This project provides a production-ready analytical framework that leverages:
 
-- `data/`
-  - `av_patentdata.jsonl` — curated patent dataset
-  - `av_patent_data.json` — alternate JSON export
-  - `README.md` — dataset details and usage notes
-- `notebooks/` — narrative notebooks for each analysis stage
-- `src/` — reusable pipeline modules and helpers
-- `assets/figures/` — generated summary charts
-- `reports/` — final presentation and report artifacts
-- `requirements.txt` — Python dependencies
-- `LICENSE` — MIT license
+- **Semantic Embedding Clusters**: Grouping patents by technological concept rather than just keywords.
+- **Temporal Trend Forecasting**: Predicting the trajectory of innovation areas using Facebook Prophet.
+- **Outlier Detection**: Uncovering niche or unique innovations using Isolation Forests.
+- **LLM Synthesis**: Converting long-form patent claims into structured technical summaries.
 
-## Dataset
+## 📊 System Architecture
 
-The dataset includes 667 U.S. patents focused on autonomous vehicle technology published between 2020 and 2025. Each record includes key text fields and metadata necessary for NLP analysis.
+```mermaid
+graph TD
+    A[Raw Patent Data .jsonl] --> B[Data Ingestion & Normalization]
+    B --> C[Text Corpus Construction]
+    C --> D{Analysis Engines}
+    D --> E[Semantic Clustering - SBERT/UMAP]
+    D --> F[Temporal Trend Analysis - Prophet]
+    D --> G[Emergence Scoring]
+    D --> H[Outlier Detection - Isolation Forest]
+    D --> I[LLM Extraction - Gemini]
+    E --> J[Innovation Intelligence]
+    F --> J
+    G --> J
+    H --> J
+    I --> J
+```
 
-Fields include:
-- `lens_id`
-- `date_published`
-- `claims`
-- `description`
-- `earliest_claim_date`
-- `applicant_name`
-- `cpc_symbols`
-- `invention_title_text`
-- `abstract_text`
+## 🛠️ Getting Started
 
-## Analysis workflow
+### Prerequisites
+- Python 3.10 or higher
+- [Optional] Google Gemini API Key (for structured extraction)
 
-The notebooks are arranged to guide the analysis from ingestion through insight generation:
+### Installation
+```bash
+# Clone the repository
+git clone https://github.com/aniketqxp/av-tech-trends-patent-mining.git
+cd av-tech-trends-patent-mining
 
-1. `notebooks/01-data-ingest-preprocessing.ipynb`
-2. `notebooks/02-exploratory-analysis.ipynb`
-3. `notebooks/03-semantic-clustering.ipynb`
-4. `notebooks/04-innovation-trend-analysis.ipynb`
-5. `notebooks/05-emergence-analysis.ipynb`
-6. `notebooks/06-outlier-detection.ipynb`
-7. `notebooks/07-structured-extraction-llm.ipynb`
-8. `notebooks/08-project-exploration.ipynb`
+# Create and activate virtual environment
+python -m venv .venv
+source .venv/bin/activate  # On Windows: .\.venv\Scripts\activate
 
-## Quick summary visuals
+# Install dependencies
+pip install -r requirements.txt
+```
+
+### Quick Start
+You can run the core pipeline via the root-level entry point:
+```bash
+python main.py
+```
+
+## 📂 Project Structure
+
+- `src/`: Modularized core execution logic and data loaders.
+- `notebooks/`: Narrative exploration for each stage of the analysis.
+- `data/`: Curated dataset of ~700 AV patents (2020–2025).
+- `assets/figures/`: Generated analytical visualizations.
+- `reports/`: Consolidated project reports and review presentations.
+
+## 📈 Visual Insights
 
 ![Patent Volume by Publication Year](assets/figures/patents_by_year.png)
 
 ![Top Autonomous Vehicle Patent Applicants](assets/figures/top_applicants.png)
 
-## Setup
+<!-- Placeholder for Semantic Cluster Plot -->
+<!-- ![Semantic Clustering Visualization](assets/figures/semantic_clusters.png) -->
 
-Create a Python environment and install dependencies:
-
-```bash
-python -m venv .venv
-.\.venv\Scriptsctivate
-pip install --upgrade pip
-pip install -r requirements.txt
-```
-
-## Running the analysis
-
-1. Launch Jupyter Lab:
-
-   ```bash
-   jupyter lab
-   ```
-
-2. Open the notebooks in `notebooks/`.
-
-3. Use `src/data_loader.py` and `src/pipeline.py` to load data and run reusable pipeline steps.
-
-## Reusable code
-
-- `src/data_loader.py` loads JSONL patent records.
-- `src/pipeline.py` provides a reusable pipeline for loading the dataset, building a text corpus, and generating a base DataFrame.
-
-## License
-
-This repository is licensed under the MIT License. See `LICENSE` for details.
+## 📜 License
+This repository is licensed under the MIT License. See [LICENSE](LICENSE) for details.
