@@ -3,16 +3,16 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python: 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/downloads/)
 
-A sophisticated data-driven pipeline for mining, analyzing, and visualizing trends in Autonomous Vehicle (AV) patents. This project transforms raw patent data into actionable innovation intelligence through semantic clustering, temporal forecasting, and LLM-powered structured extraction.
+A data-driven pipeline for mining, analyzing, and visualizing trends in Autonomous Vehicle (AV) patents. This repository transforms raw patent data into innovation intelligence through semantic clustering, temporal forecasting, and LLM-powered structured extraction.
 
-## The Hook: Why This Project?
+## Project Overview
 
-The autonomous vehicle industry is a dense thicket of complex intellectual property. Identifying emerging technologies, dominant applicants, and novel outliers requires more than simple keyword searches. This project provides a production-ready analytical framework that leverages:
+The autonomous vehicle industry contains a vast volume of intellectual property. This project provides an analytical framework to identify emerging technologies, dominant applicants, and novel outliers using the following methodologies:
 
-- **Semantic Embedding Clusters**: Grouping patents by technological concept rather than just keywords.
-- **Temporal Trend Forecasting**: Predicting the trajectory of innovation areas using Facebook Prophet.
-- **Outlier Detection**: Uncovering niche or unique innovations using Isolation Forests.
-- **LLM Synthesis**: Converting long-form patent claims into structured technical summaries.
+- **Semantic Embedding Clusters**: Categorization of patents by technological concept using SBERT and UMAP.
+- **Temporal Trend Forecasting**: Projection of innovation trajectories using Facebook Prophet.
+- **Outlier Detection**: Identification of niche innovations using Isolation Forests.
+- **LLM Synthesis**: Conversion of long-form patent claims into structured technical summaries using the Gemini API.
 
 ## System Architecture
 
@@ -74,7 +74,7 @@ pip install -r requirements.txt
 ```
 
 ### Quick Start
-You can run the core pipeline via the root-level entry point:
+Execute the core pipeline via the root-level entry point:
 ```bash
 python main.py
 ```
@@ -82,12 +82,12 @@ python main.py
 ## Project Structure
 
 - `src/`: Modularized core execution logic and data loaders.
-- `notebooks/`: Narrative exploration for each stage of the analysis.
+- `notebooks/`: Analytical notebooks for sequential stages of analysis.
 - `data/`: Curated dataset of ~700 AV patents (2020–2025).
-- `assets/figures/`: Generated analytical visualizations.
-- `reports/`: Consolidated project reports and review presentations.
+- `assets/figures/`: Generated analytical visualizations and plots.
+- `reports/`: Consolidated project reports and presentations.
 
-## Visual Insights
+## Visual Analysis
 
 ![Patent Volume by Publication Year](assets/figures/patents_by_year.png)
 
