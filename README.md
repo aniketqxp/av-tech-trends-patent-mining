@@ -48,7 +48,7 @@ graph TD
     style G fill:#e17055,stroke:#000,color:#fff
     style H fill:#d63031,stroke:#000,color:#fff
     style I fill:#fdcb6e,stroke:#000,color:#000
-    style J fill:#00b894,stroke:#000,color:#fff
+    style J fill:#81ecec,stroke:#000,color:#000
     style K fill:#2d3436,stroke:#000,color:#fff
     style L fill:#2d3436,stroke:#000,color:#fff
 ```
